@@ -4,7 +4,7 @@ Napisati aplikaciju koja simulira prikaz vrednosti akcija na berzi. Program na s
 
 Klasa koja generise vrednosti akcija postoji samo jedna na nivou cele aplikacije.
 
-Program takodje podrzava upload trenutnih vrednosti na neku eksternu platformu, medjutim interfejsi se ne poklapaju. Platforma ocekuje da vrednost bude enkapsulirana unutar objekta i da vrednost bude decimalni broj pod imenom “stockMarketValue”.
+Program takodje podrzava upload trenutnih vrednosti na neku eksternu platformu, medjutim interfejsi se ne poklapaju. Platforma ocekuje da vrednost bude enkapsulirana unutar objekta i da vrednost bude decimalni broj pod imenom _stockMarketValue_.
 
 Detektovati potrebne dizajn paterne i implementirati program u Javi.
 
