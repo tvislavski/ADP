@@ -1,0 +1,9 @@
+8
+pera| Petar Petrovic|5| Perin status
+mika| Mirko Miric|4
+zika| Zivko Zivkovic|4
+bora| Borislav Boric|1
+dora| Dora Doric|2
+lora| Lora Loric|7| Lorin status
+mara| Marija Maric|3
+lara| Lara Laric| 3| Larin status
