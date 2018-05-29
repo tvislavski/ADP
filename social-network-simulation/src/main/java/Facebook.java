@@ -5,12 +5,16 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public class Facebook {
+	
+	private static final String PROFILE_INFO_SEPARATOR = "\\|";
+	private static final String MATRICA = "matrica.txt";
+	private static final String PROFILI = "profili.txt";
 
 	private FacebookProfil niz[];
 
-	Facebook(String Profili, String Matrica) {
-		if (ucitajProfile(Profili)) {
-			Optional<boolean[][]> matrica = ucitajIzFajla(Matrica, this::ucitajMatricu);
+	Facebook(String fajlSaProfilima, String fajlSaMatricom) {
+		if (ucitajProfile(fajlSaProfilima)) {
+			Optional<boolean[][]> matrica = ucitajIzFajla(fajlSaMatricom, this::ucitajMatricu);
 			if (matrica.isPresent()) {
 				poveziPrijatelje(matrica.get());
 			}
@@ -43,7 +47,7 @@ public class Facebook {
 		int brojProfila = Integer.parseInt(fajl.readLine().trim());
 		FacebookProfil[] profili = new FacebookProfil[brojProfila];
 		for (int i = 0; i < brojProfila; i++) {
-			profili[i] = FacebookProfil.kreirajOdStringa(fajl.readLine(), "\\|");
+			profili[i] = FacebookProfil.kreirajOdStringa(fajl.readLine(), PROFILE_INFO_SEPARATOR);
 		}
 		return profili;
 	}
@@ -51,7 +55,7 @@ public class Facebook {
 	private boolean[][] ucitajMatricu(BufferedReader fajl) throws IOException {
 		boolean[][] matrica = new boolean[niz.length][niz.length];
 		for (int i = 0; i < matrica.length; i++) {
-			String[] tokeni = fajl.readLine().split("\\|");
+			String[] tokeni = fajl.readLine().split(PROFILE_INFO_SEPARATOR);
 			for (int j = 0; j < matrica.length; j++) {
 				matrica[i][j] = tokeni[j].trim().equals("1");
 			}
@@ -89,7 +93,7 @@ public class Facebook {
 	}
 
 	public static void main(String[] sdadsa) {
-		Facebook fb = new Facebook("profili.txt", "matrica.txt");
+		Facebook fb = new Facebook(PROFILI, MATRICA);
 		System.out.println(fb);
 	}
 }
